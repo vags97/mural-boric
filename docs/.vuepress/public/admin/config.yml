@@ -20,11 +20,11 @@ collections:
           - { label: "Tags", name: "tags", widget: "list", required: false }
           - { label: "Cuerpo", name: body, widget: markdown, required: false }
   - label: "Material"
-    name: "material"
+    name: "materiales"
     folder: "docs/materiales"
     create: true
     fields:
-      - { label: "Material", name: "material", widget: "hidden", default: true }
+      - { label: "Material", name: "materiales", widget: "hidden", default: true }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list", required: false, default: ['Gabriel Boric'] }
       - { label: "Fecha", name: "date", widget: "date" }
@@ -32,19 +32,11 @@ collections:
         name: "image"
         widget: "image"
         default: "/media/gabriel-boric.jpg"
-        media_library:
-          config:
-            cloud_name: cloudnary
-            multiple: true
       - label: "Archivo"
         name: "file"
         widget: "file"
         default: ""
         required: false
-        media_library:
-          config:
-            cloud_name: cloudnary
-            multiple: true
       - label: "Archivo de Descarga Externa (URL)"
         name: "file_external"
         widget: "string"

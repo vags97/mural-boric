@@ -1,6 +1,6 @@
 ---
 title: Poleras Boric
-material: true
+materiales: true
 tags:
   - GabrielBoric
   - Polera
