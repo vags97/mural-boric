@@ -46,9 +46,9 @@ collections:
             cloud_name: cloudnary
             multiple: true
       - label: "Archivo de Descarga Externa (URL)"
-          name: "file_external"
-          widget: "string"
-          default: ""
-          required: false
+        name: "file_external"
+        widget: "string"
+        default: ""
+        required: false
       - { label: "Descripción", name: "description", widget: "string" }
       - { label: "Cuerpo", name: "body", widget: "markdown", required: false }
