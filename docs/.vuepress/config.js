@@ -84,7 +84,6 @@ module.exports = {
     nav: [
     ],
     materiales,
-    afiches,
     domain: dominio,
     logo: '/media/BoricLogo.svg',
     facebook: 'gabrielboric',
