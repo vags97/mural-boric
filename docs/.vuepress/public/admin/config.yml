@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: vags97/mural-boric
+  branch: main
 media_folder: "docs/.vuepress/public/media"
 public_folder: "/media"
 publish_mode: editorial_workflow
