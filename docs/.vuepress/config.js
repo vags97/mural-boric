@@ -109,7 +109,7 @@ module.exports = {
             "id": "candidatoBoric",
             "name": "Gabriel Boric",
             "url": "https://www.boricpresidente.cl",
-            "image": "https://www.apruebo-dignidad.cl/media/gabriel-boric.jpg",
+            "image": "/media/gabriel-boric.jpg",
             "sameAs": [
                 "https://www.facebook.com/gabrielboric",
                 "https://twitter.com/gabrielboric",

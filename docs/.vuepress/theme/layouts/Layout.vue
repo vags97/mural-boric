@@ -40,15 +40,10 @@ export default {
       return {
         "@context": "https://schema.org/",
         "@type": "WebSite",
-        "id": "aprueboDignidadWebSite",
-        "name": "Apruebo Dignidad",
-        "url": "https://www.apruebo-dignidad.cl",
+        "id": "muralBoricWebsite",
+        "name": "Mural de Boric",
+        "url": this.$themeConfig.domain,
         "countryOfOrigin": "Chile",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.apruebo-dignidad.cl/candidatos.html?comuna={search_term_string}",
-          "query-input": "required name=search_term_string"
-        },
         '@graph': [
           jsonLd.aprueboDignidad,
           {

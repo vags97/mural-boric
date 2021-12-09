@@ -1,7 +1,7 @@
 {
-  "name": "apruebo-dignidad-web",
+  "name": "mural-boric",
   "version": "1.0.0",
-  "description": "Página de Apruebo Dignidad",
+  "description": "Mural de Boric",
   "author": "Vicente Gamboa",
   "scripts": {
     "build": "vuepress build docs",
