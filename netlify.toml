@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "docs/.vuepress/dist"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+
+[plugins.inputs]
+  cloudName = "dleqmbsp1"
+  deliveryType = "upload"
