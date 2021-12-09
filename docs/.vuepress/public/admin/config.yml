@@ -24,6 +24,8 @@ collections:
     name: "materiales"
     folder: "docs/materiales"
     create: true
+    media_folder: "../.vuepress/public/media/materiales"
+    public_folder: "/media/materiales"
     fields:
       - { label: "Material", name: "materiales", widget: "hidden", default: true }
       - { label: "Titulo", name: "title", widget: "string" }
@@ -33,13 +35,9 @@ collections:
         name: "image"
         widget: "image"
         default: "/media/materiales/gabriel-boric.jpg"
-        media_library:
-          media_folder: "../.vuepress/public/media/materiales"
       - label: "Archivo"
         name: "file"
         widget: "file"
-        media_library:
-          media_folder: "../.vuepress/public/media/materiales"
         default: ""
         required: false
       - label: "Archivo de Descarga Externa (URL)"
