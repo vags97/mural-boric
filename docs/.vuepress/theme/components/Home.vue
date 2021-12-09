@@ -51,9 +51,6 @@ export default {
     materiales () {
       return this.$site.themeConfig.materiales;
     },
-    afiches () {
-      return this.$site.themeConfig.afiches;
-    },
     data () {
       return this.$page.frontmatter
     }
