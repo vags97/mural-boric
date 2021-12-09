@@ -34,12 +34,12 @@ collections:
         widget: "image"
         default: "/media/materiales/gabriel-boric.jpg"
         media_library:
-          media_folder: "docs/.vuepress/public/media/materiales"
+          media_folder: "../.vuepress/public/media/materiales"
       - label: "Archivo"
         name: "file"
         widget: "file"
         media_library:
-          media_folder: "docs/.vuepress/public/media/materiales"
+          media_folder: "../.vuepress/public/media/materiales"
         default: ""
         required: false
       - label: "Archivo de Descarga Externa (URL)"
