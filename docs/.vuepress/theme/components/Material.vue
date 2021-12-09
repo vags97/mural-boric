@@ -38,7 +38,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn
-                    :href="material.files"
+                    :href="material.file"
                     download
                     color="primary"
                     small

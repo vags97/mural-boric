@@ -6,7 +6,7 @@
       <v-main>
         <v-container class="py-6" fluid>
           <Home v-if="$page.frontmatter.home" />
-          <Material v-else-if="$page.frontmatter.material" />
+          <Material v-else-if="$page.frontmatter.materiales" />
         </v-container>
       </v-main>
       <Footer />

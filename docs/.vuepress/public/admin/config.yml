@@ -2,8 +2,8 @@ backend:
   name: github
   repo: vags97/mural-boric
   branch: main
-media_folder: "docs/.vuepress/public/media"
-public_folder: "/media"
+media_folder: "docs/.vuepress/public/media/afiches"
+public_folder: "/media/afiches"
 publish_mode: editorial_workflow
 collections:
   - label: "Home"
@@ -16,7 +16,7 @@ collections:
         fields:
           - { label: "Home", name: "home", widget: "hidden", default: true }
           - { label: "Titulo", name: "title", widget: "string" }
-          - { label: "Imagen", name: "image", widget: "image", default: "/media/gabriel-boric.jpg" }
+          - { label: "Imagen", name: "image", widget: "image", default: "/media/materiales/gabriel-boric.jpg" }
           - { label: "Descripción", name: "description", widget: "string" }
           - { label: "Tags", name: "tags", widget: "list", required: false }
           - { label: "Cuerpo", name: body, widget: markdown, required: false }
@@ -24,6 +24,8 @@ collections:
     name: "materiales"
     folder: "docs/materiales"
     create: true
+    media_folder: "docs/.vuepress/public/media/materiales"
+    public_folder: "/media/materiales"
     fields:
       - { label: "Material", name: "materiales", widget: "hidden", default: true }
       - { label: "Titulo", name: "title", widget: "string" }
@@ -32,7 +34,7 @@ collections:
       - label: "Imagen"
         name: "image"
         widget: "image"
-        default: "/media/gabriel-boric.jpg"
+        default: "/media/materiales/gabriel-boric.jpg"
       - label: "Archivo"
         name: "file"
         widget: "file"

@@ -21,6 +21,12 @@ function getFiles (pathRead) {
   return dirTree(path.join(__dirname, pathRead), {extensions: /\.md/}).children;
 }
 
+function getFilesA (pathRead) {
+    return dirTree(path.join(__dirname, pathRead), {extensions: /\.jpg|\.png|\.jpeg/}).children;
+}
+
+const afiches = getFilesA('public/media/afiches').map(el => el.name);
+
 const materiales = getFiles('../materiales')
     .map(file => {
       const fileInfo = fileToMdMetaFileName(file);
@@ -96,6 +102,7 @@ module.exports = {
     nav: [
     ],
     materiales,
+    afiches,
     domain: "https://mural.boricpresidente.cl",
     logo: '/media/BoricLogo.svg',
     facebook: 'gabrielboric',

@@ -31,6 +31,7 @@
           color="white"
           @click="drawer = true"
           class="d-sm-flex d-md-none"
+          v-if="userLinks.length>0"
       />
       <RouterLink
           :to="$localePath"
