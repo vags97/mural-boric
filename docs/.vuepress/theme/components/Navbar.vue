@@ -54,6 +54,15 @@
         >
           KIT GRÁFICO
         </v-btn>
+        <v-btn
+            :href="'mailto:'+$themeConfig.email"
+            target="_blank"
+            elevation="0"
+            color="secondary"
+            class="primary--text font-weight-bold rounded-0 mr-4"
+        >
+          Envía tu Aporte
+        </v-btn>
         <AlgoliaSearchBox
             v-if="isAlgoliaSearch"
             :options="algolia"
