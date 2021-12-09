@@ -1,6 +1,12 @@
 <template>
   <div>
     <script v-html="jsonLd()" type="application/ld+json"></script>
+    <ShareDialog
+        v-if="comparteDialog"
+        :title="material.title"
+        :route="material.route"
+        v-model="comparteDialog"
+    />
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8" lg="6">
         <v-row>
@@ -11,24 +17,6 @@
                 class="material-image white--text align-end"
                 :alt="'image' + material.title.toLowerCase().replace(' ', '_')"
               >
-                <v-row justify="end">
-                  <v-col cols="auto">
-                  <v-btn
-                    x-small
-                    color="primary"
-                    :href="material.image"
-                    download
-                  >
-                    <v-icon
-                      left
-                      x-small
-                    >
-                      {{mdiDownload}}
-                    </v-icon>
-                    Descargar
-                  </v-btn>
-                  </v-col>
-                </v-row>
               </v-img>
               <v-card-title>
                 {{ material.title }}
@@ -37,29 +25,45 @@
                 <Content/>
               </v-card-text>
               <v-card-actions>
-                <v-btn
-                    :href="material.file"
-                    download
-                    color="primary"
-                    small
-                >
-                  <v-icon left>
-                    {{mdiDownload}}
-                  </v-icon>
-                  Descargar Archivo
-                </v-btn>
-                <v-btn
-                    :href="material.file_external"
-                    download
-                    color="primary"
-                    small
-                    target="_blank"
-                >
-                  <v-icon left>
-                    {{mdiOpenInNew }}
-                  </v-icon>
-                  Ir a Página de Descarga
-                </v-btn>
+                <v-row class="px-1">
+                  <v-col class="px-0" cols="6">
+                    <v-btn
+                        small
+                        color="primary"
+                        @click="comparteDialog=true"
+                        block
+                        class="rounded-0"
+                        elevation="0"
+                    >
+                      <v-icon
+                          left
+                          small
+                      >
+                        {{mdiShareVariant }}
+                      </v-icon>
+                      Comparte
+                    </v-btn>
+                  </v-col>
+                  <v-col class="px-0" cols="6">
+                    <v-btn
+                        small
+                        color="#0e8974"
+                        :href="material.image"
+                        download
+                        block
+                        class="rounded-0 white--text"
+                        elevation="0"
+                    >
+                      <v-icon
+                          left
+                          small
+                      >
+                        {{mdiDownload}}
+                      </v-icon>
+                      Descarga
+                    </v-btn>
+                  </v-col>
+                </v-row>
               </v-card-actions>
               <v-card-text>
                 ¿Quieres enviar material? Escríbenos a <a :href="`mailto:${email}`">{{ email }}</a>
@@ -73,17 +77,16 @@
 </template>
 
 <script>
-import {
-  mdiDownload,
-  mdiOpenInNew
-} from '@mdi/js';
-
+import {mdiShareVariant, mdiDownload } from '@mdi/js'
+import ShareDialog from "./ShareDialog";
 export default {
   name: 'Material',
+  components: {ShareDialog},
   data(){
     return {
+      mdiShareVariant,
       mdiDownload,
-      mdiOpenInNew
+      comparteDialog: false
     }
   },
   computed:{

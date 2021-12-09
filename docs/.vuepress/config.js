@@ -4,6 +4,9 @@ const MarkdownIt = require('markdown-it');
 const meta = require('markdown-it-meta');
 const fs = require('fs');
 
+const email = 'mural.boric@gmail.com'
+const dominio = 'https://mural-boric.netlify.app'
+
 function fileToMdMetaFileName(file){
   const fileName = path.parse(file.name).name;
   const filePath = file.path;
@@ -20,12 +23,6 @@ function fileToMdMetaFileName(file){
 function getFiles (pathRead) {
   return dirTree(path.join(__dirname, pathRead), {extensions: /\.md/}).children;
 }
-
-function getFilesA (pathRead) {
-    return dirTree(path.join(__dirname, pathRead), {extensions: /\.jpg|\.png|\.jpeg/}).children;
-}
-
-const afiches = getFilesA('public/media/afiches').map(el => el.name);
 
 const materiales = getFiles('../materiales')
     .map(file => {
@@ -51,12 +48,11 @@ const allPages = [
     ...materiales
 ]
 
-const googleAnalyticsId = 'G-HX30FV5WLV'
 
 module.exports = {
   plugins: [
       ['sitemap', {
-          hostname: 'https://mural.boricpresidente.cl/',
+          hostname: dominio+'/',
           urls: allPages.map(page=> {
               return {
                   url: page.route,
@@ -80,30 +76,16 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/media/favicons/favicon-32x32.png"}],
     ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/media/favicons/favicon-16x16.png"}],
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0"} ],
-    [
-        'script',
-        {
-            async: true,
-            src: 'https://www.googletagmanager.com/gtag/js?id='+googleAnalyticsId,
-        },
-    ],
-    [
-        'script',
-        {},
-        [
-            "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '" + googleAnalyticsId + "');",
-        ],
-    ],
   ],
   themeConfig: {
     author: 'Seguimos',
     title: "Mural por Boric",
-    email: 'aportes@boricpresidente.cl',
+    email,
     nav: [
     ],
     materiales,
     afiches,
-    domain: "https://mural.boricpresidente.cl",
+    domain: dominio,
     logo: '/media/BoricLogo.svg',
     facebook: 'gabrielboric',
     twitter: 'gabrielboric',

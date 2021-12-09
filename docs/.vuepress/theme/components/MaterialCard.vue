@@ -1,35 +1,72 @@
 <template>
   <v-card>
+    <ShareDialog
+        v-if="comparteDialog"
+        :title="title"
+        :route="route"
+        v-model="comparteDialog"
+    />
     <v-img
         :src="image"
-        height="200px"
         :alt="'image' + title.toLowerCase().replace(' ', '_')"
-    />
-    <v-card-title class="py-1">
-      <a :href="route" class="candidato-title">
-        {{ title }}
-      </a>
-    </v-card-title>
-    <v-card-text>
-      <p class="mb-0">
-        {{ description }}
-      </p>
-      <a :href="route">
-        Ver
-      </a>
-    </v-card-text>
+        class="align-end"
+    >
+      <v-row>
+        <v-col cols="6" class="pr-0">
+          <v-btn
+              small
+              color="primary"
+              @click="comparteDialog=true"
+              block
+              class="rounded-0"
+              elevation="0"
+          >
+            <v-icon
+                left
+                small
+            >
+              {{mdiShareVariant }}
+            </v-icon>
+            Comparte
+          </v-btn>
+        </v-col>
+        <v-col cols="6"  class="pl-0">
+          <v-btn
+              small
+              color="#0e8974"
+              :href="image"
+              download
+              block
+              class="rounded-0 white--text"
+              elevation="0"
+          >
+            <v-icon
+                left
+                small
+            >
+              {{mdiDownload}}
+            </v-icon>
+            Descarga
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-img>
   </v-card>
 </template>
 
 <script>
+import {mdiShareVariant, mdiDownload } from '@mdi/js'
+import ShareDialog from "./ShareDialog";
+
 export default {
   name: "CandidatoCard",
+  components: {ShareDialog},
   props: {
-    image: {
+    title: {
       type: String,
       default: ''
     },
-    title: {
+    image: {
       type: String,
       default: ''
     },
@@ -37,23 +74,14 @@ export default {
       type: String,
       default: ''
     },
-    description: {
-      type: String,
-      default: ''
-    },
   },
-  methods: {
-    colorChip(tipoCandidatura){
-      switch(tipoCandidatura){
-        case 1:
-          return "primary"
-        case 2:
-          return "secondary"
-        case 3:
-          return "yellow"
-      }
+  data(){
+    return {
+      mdiShareVariant,
+      mdiDownload,
+      comparteDialog: false
     }
-  }
+  },
 }
 </script>
 
