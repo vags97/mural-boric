@@ -21,7 +21,7 @@
                 :image="material.image"
                 :route="material.route"
             />
-          </v-col>\
+          </v-col>
       </v-row>
     </v-col>
   </v-row>

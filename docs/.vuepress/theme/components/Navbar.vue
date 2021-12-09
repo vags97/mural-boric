@@ -39,13 +39,21 @@
       >
         <div class="boric-logo"/>
       </RouterLink>
-
       <div
           class="links"
           :style="linksWrapMaxWidth ? {
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
       >
+        <v-btn
+            href="https://drive.google.com/drive/folders/	1vwqqSnxHIyv9wI617h8pUers1OudaBo0"
+            target="_blank"
+            elevation="0"
+            color="secondary"
+            class="primary--text font-weight-bold rounded-0 mr-4"
+        >
+          KIT GRÁFICO
+        </v-btn>
         <AlgoliaSearchBox
             v-if="isAlgoliaSearch"
             :options="algolia"
