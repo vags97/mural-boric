@@ -10,6 +10,28 @@
           nav
           dense
       >
+        <v-list-item>
+          <v-btn
+              href="https://drive.google.com/drive/folders/	1vwqqSnxHIyv9wI617h8pUers1OudaBo0"
+              target="_blank"
+              elevation="0"
+              color="secondary"
+              class="primary--text font-weight-bold rounded-0 mr-4"
+          >
+            KIT GRÁFICO
+          </v-btn>
+          </v-list-item>
+        <v-list-item>
+          <v-btn
+              :href="'mailto:'+$themeConfig.email"
+              target="_blank"
+              elevation="0"
+              color="secondary"
+              class="primary--text font-weight-bold rounded-0 mr-4"
+          >
+            Envía tu Aporte
+          </v-btn>
+        </v-list-item>
         <v-list-item
             v-for="item in userLinks"
             :key="item.link"
@@ -31,7 +53,6 @@
           color="white"
           @click="drawer = true"
           class="d-sm-flex d-md-none"
-          v-if="userLinks.length>0"
       />
       <RouterLink
           :to="$localePath"
@@ -45,6 +66,7 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
       >
+        <div class="d-none d-md-flex">
         <v-btn
             href="https://drive.google.com/drive/folders/	1vwqqSnxHIyv9wI617h8pUers1OudaBo0"
             target="_blank"
@@ -63,6 +85,7 @@
         >
           Envía tu Aporte
         </v-btn>
+        </div>
         <AlgoliaSearchBox
             v-if="isAlgoliaSearch"
             :options="algolia"

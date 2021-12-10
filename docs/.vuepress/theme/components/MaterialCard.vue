@@ -1,57 +1,60 @@
 <template>
-  <v-card>
+  <div>
     <ShareDialog
         v-if="comparteDialog"
         :title="title"
         :route="route"
         v-model="comparteDialog"
     />
-    <v-img
-        :src="image"
-        :alt="'image' + title.toLowerCase().replace(' ', '_')"
-        class="align-end"
-    >
-      <v-row>
-        <v-col cols="6" class="pr-0">
-          <v-btn
-              small
-              color="primary"
-              @click="comparteDialog=true"
-              block
-              class="rounded-0"
-              elevation="0"
-          >
-            <v-icon
-                left
+    <v-card class="rounded-sm">
+      <v-img
+          :src="image"
+          :alt="'image' + title.toLowerCase().replace(' ', '_')"
+          class="align-end"
+      >
+        <v-row>
+          <v-col cols="6" class="pr-0">
+            <v-btn
                 small
+                color="primary"
+                @click="comparteDialog=true"
+                block
+                class="rounded-0"
+                elevation="0"
             >
-              {{mdiShareVariant }}
-            </v-icon>
-            Comparte
-          </v-btn>
-        </v-col>
-        <v-col cols="6"  class="pl-0">
-          <v-btn
-              small
-              color="#0e8974"
-              :href="image"
-              download
-              block
-              class="rounded-0 white--text"
-              elevation="0"
-          >
-            <v-icon
-                left
+              <v-icon
+                  left
+                  small
+              >
+                {{mdiShareVariant }}
+              </v-icon>
+              Comparte
+            </v-btn>
+          </v-col>
+          <v-col cols="6"  class="pl-0">
+            <v-btn
                 small
+                color="#0e8974"
+                :href="image"
+                download
+                block
+                class="rounded-0 white--text"
+                elevation="0"
             >
-              {{mdiDownload}}
-            </v-icon>
-            Descarga
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-img>
-  </v-card>
+              <v-icon
+                  left
+                  small
+              >
+                {{mdiDownload}}
+              </v-icon>
+              Descarga
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-img>
+    </v-card>
+  </div>
+
 </template>
 
 <script>
