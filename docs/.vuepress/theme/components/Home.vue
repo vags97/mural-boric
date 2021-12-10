@@ -8,20 +8,20 @@
         >
           <Content  />
         </v-col>
-          <v-col
-              cols="12"
-              sm="6"
-              md="4"
-              lg="3"
-              v-for="(material, index) in materiales"
-              :key="index"
-          >
-            <MaterialCard
-                :title="material.title"
-                :image="material.image"
-                :route="material.route"
-            />
-          </v-col>
+        <v-col
+            cols="12"
+            sm="6"
+            md="4"
+            lg="3"
+            v-for="(material, index) in materiales"
+            :key="index"
+        >
+          <MaterialCard
+              :title="material.title"
+              :image="material.image"
+              :route="material.route"
+          />
+        </v-col>
       </v-row>
     </v-col>
   </v-row>
