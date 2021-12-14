@@ -5,7 +5,7 @@ const meta = require('markdown-it-meta');
 const fs = require('fs');
 
 const email = 'mural.boric@gmail.com'
-const dominio = 'https://mural-boric.netlify.app'
+const dominio = 'https://www.elmuraldeboric.cl'
 
 function fileToMdMetaFileName(file){
   const fileName = path.parse(file.name).name;
