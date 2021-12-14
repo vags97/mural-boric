@@ -119,7 +119,6 @@ export default {
 <style lang="stylus">
 
 .material-image
-  aspect-ratio 16/9
   width 100%
   max-height 100%
   .content-text
